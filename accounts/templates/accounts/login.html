@@ -1,0 +1,37 @@
+{% extends 'base.html' %}
+
+{% block jumbo %}
+{% endblock jumbo %}
+
+
+
+
+{% block main %}
+    <h1>Login</h1>
+    {% if error %}
+    <div class="alert alert-danger" role="alert">
+        {{ error }}
+        <br>
+    </div>
+    {% endif %}
+    <div class="container">
+    <form method="post" action="{% url 'login' %}">
+        {% csrf_token %}
+        <br>
+        Username:
+        <br>
+        <input type="text" name="username">
+
+        <br><br>
+        Password:
+        <br>
+        <input type="password" name="password">
+
+        <br><br>
+        <input class="btn btn-primary" type="submit" value="Login">
+    </form>
+    </div>
+{% endblock main %}
+
+{% block album %}
+{% endblock album %}
