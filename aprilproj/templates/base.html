@@ -8,15 +8,16 @@
           content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.0/css/bootstrap.min.css" integrity="sha384-9gVQ4dYFwwWSjIDZnLEWnxCjeSWFphJiwGPXr1jddIhOegiu1FwO5qRGvFXOdJZ4" crossorigin="anonymous">
-
-    <title>Base</title>
+    <link href="{% static 'open-iconic/font/css/open-iconic-bootstrap.css' %}" rel="stylesheet">
+    <link href="{% static 'favicon.ico' %}" rel="icon" type="image/x-icon" />
+    <title>Producthunt</title>
 </head>
 
 <body>
     <!-- Navbar -->
     <div class="container">
     <nav class="navbar navbar-expand-lg navbar navbar-dark bg-primary">
-      <a class="navbar-brand" href="#">HCF CAT</a>
+      <a class="navbar-brand" href="{% url 'home_home' %}">HCF-CAT</a>
       <img src="{% static 'cat.png' %}" height=30 class="d-inline-block align-top">
       <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>
@@ -31,11 +32,13 @@
                     {% csrf_token %}
                     <input type="hidden">
                 </form>
+
+                <a class="nav-item nav-link" href="{% url 'product_create' %}"><span class="oi oi-plus"></span></a>
             {% else %}
                 <a class="nav-item nav-link" href="{% url 'signup' %}">Sign Up</a>
                 <a class="nav-item nav-link" href="{% url 'login' %}">Login</a>
             {% endif %}
-          <a class="nav-item nav-link" href="{% static 'ClintItäpuu.gif' %}">Clint</a>
+          <a class="nav-item nav-link" href="{% static 'paavo1.jpg' %}">Paavo</a>
           <a class="nav-item nav-link disabled" href="#">Disabled</a>
         </div>
         <div class="navbar-nav ml-auto">

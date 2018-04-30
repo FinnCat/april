@@ -7,6 +7,6 @@ local_settings.py
 
 media
 static
-
+static-asset
 aprilproj/staticfiles/
 
