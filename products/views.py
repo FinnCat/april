@@ -5,7 +5,7 @@ from .models import Product
 
 # Create your views here.
 def home(request):
-    products = Product.objects
+    products = Product.objects.order_by('-pub_date')[:10]
     return render(request, 'products/home.html', {'products':products})
 
 @login_required(login_url="/accounts/signup")
